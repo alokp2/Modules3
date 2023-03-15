@@ -85,4 +85,10 @@ print(count)
 '''
 Write a Python function that takes two lists and returns true if they have
 at least one common member.'''
-
+def common_member(list6,list7):
+   for i in list6:
+      if i not in list7:
+         print(i)
+      else:
+         print   
+common_member([1,2,3,4],[1,2,5,6,7])
