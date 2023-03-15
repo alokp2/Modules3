@@ -33,16 +33,29 @@ Append only add one element to the list and Extend can multiple elements at a ti
  '''
 
 '''Write a Python function to get the largest number, smallest num and sum
-of all from a list. 
+of all from a list. '''
+total=0
+list5=[12,23,21,22,11,2,34,34,56,43]
+def largest_num():
+   print(max(list5))
+
+def smallest_num():
+   print(min(list5))
+ 
+
+def total_sum():
+    print("Total sum: ",sum(list5))
+
+largest_num()
+smallest_num()
+total_sum()
 
 
-
-'''
 
 '''How will you compare two lists? 
 we can compare the two list using condition statement
-
 '''
+
 l1=[1,2,677,8,9,0]
 l2=[2,3,4,5,6,7,8]
 if li==l2:
@@ -67,3 +80,9 @@ for i in words:
 print(count)
 
 #Write a Python program to remove duplicates from a list.
+
+
+'''
+Write a Python function that takes two lists and returns true if they have
+at least one common member.'''
+
