@@ -302,5 +302,4 @@ for i in range(1,15+1):
 print(my_dict)
 
 
-'''Write a Python program to check multiple keys exists in a dictionary'''
 
