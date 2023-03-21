@@ -1,3 +1,6 @@
+
+#Modules 3
+
 '''1.What is List? How will you reverse a list?
 List is a collection of data type which contains similar and dis-similar data elements at single location.List is mutable,orderable,and indexable.
 '''
@@ -287,19 +290,232 @@ else:
 
 '''How Do You Traverse Through A Dictionary Object In Python? '''
 
-dict7 = {'Gujarat': 'Gandhinagar', "chatishgarh": "raipur", "Rajasthan": "jaipur","Madhya Pradesh":"Bhopal"}
+dict7 = {'Gujarat': 'Gandhinagar', "chatishgarh": "raipur", "Rajasthan": "jaipur", "Madhya Pradesh": "Bhopal"}
 
-for key,values in dict7.items():
-    print(key,values)
-
+for key, values in dict7.items():
+    print(key, values)
 
 '''Write a Python script to print a dictionary where the keys are numbers
 between 1 and 15.'''
 
-my_dict={}
-for i in range(1,15+1):
-    my_dict[i]=i
+my_dict = {}
+for i in range(1, 15 + 1):
+    my_dict[i] = i
 print(my_dict)
 
+'''Write a Python program to check multiple keys exists in a dictionary'''
 
 
+def multiple_key(dicts, keys):
+    for key in dicts:
+        if key in keys:
+            return True
+        else:
+            return False
+
+
+dicts1 = {'apple': "1", 'banana': "2"}
+key1 = {"apple", "banana"}
+
+if multiple_key(dicts1, key1):
+    print("keys exist")
+
+else:
+    print("keys does not exist")
+
+'''Write a Python script to merge two Python dictionaries'''
+
+dicts_class = {"1": "Science", "2": "Mathematics", "3": "Social Science"}
+dict_student = {'name': 'Ramesh', 'age': '25', 'Subject': 'Math'}
+
+d = dicts_class.copy()
+d.update(dict_student)
+print(d)
+
+''' Write a Python program to map two lists into a dictionary '''
+
+l1 = [1, 2, 3, 4, 5]
+l2 = [10, 11, 12, 14, 15]
+
+dict_list = dict(zip(l1, l2))
+print(dict_list)
+
+'''Write a Python program to combine two dictionary adding values for
+common keys.'''
+
+dic3 = {'a': 100, 'b': 200, 'c': 300, 'd': 500}
+dic4 = {'a': 200, 'b': 300, 'c': 500}
+
+dict_list1 = {}
+
+for key in dic3:
+    if key in dict_list1:
+        dict_list1[key] += dic3[key]
+    else:
+        dict_list1[key] = dic3[key]
+
+for key in dic4:
+    if key in dict_list1:
+        dict_list1[key] += dic4[key]
+    else:
+        dict_list1[key] = dic4[key]
+print(dict_list1)
+
+'''Write a Python program to print all unique values in a dictionary. '''
+dic5 = {'a': 2, 'b': 3, 'c': 4, 'd': 4}
+unique = set()
+for values in dic5.values():
+    unique.add(values)
+
+for values in unique:
+    print(values)
+
+'''Why Do You Use the Zip () Method in Python? '''
+'''zip() returns a zip object which is an iterator of tuples where the first item in each passed iterator is paired together.'''
+
+'''Write a Python function to calculate the factorial of a number (a
+nonnegative integer) '''
+
+
+def calculate_factorial(n):
+    if n == 0:
+        return 1
+    elif n < 0:
+        return 1
+    else:
+        return n * calculate_factorial(n - 1)
+
+
+print(calculate_factorial(7))
+
+'''Write a Python function to check whether a number is in a given range'''
+
+
+def check_num(num):
+    if num > 10 and num < 15:
+        print("num is in a range")
+    else:
+        print("num is not in a range")
+
+
+check_num(14)
+
+''' Write a Python function to check whether a number is perfect or not. '''
+
+
+def perfect_value(num):
+    f = []
+    for item in range(1, num):
+        if num % item == 0:
+            f.append(item)
+    if sum(f) == num:
+        return True
+    else:
+        return False
+
+
+print(perfect_value(4))
+
+'''Write a Python function that checks whether a passed string is
+palindrome or not '''
+
+
+def palindromes(word):
+    p = bool(word.find(word[::-1]) + 1)
+    print(p)
+
+
+palindromes('reviver')
+
+'''How Many Basic Types Of Functions Are Available In Python? '''
+'''Two types:pre-built in function and user-defined function'''
+
+'''How can you pick a random item from a list or tuple? '''
+lists = [1, 2, 4, 6, 10, 20]
+print(random.choice(lists))
+
+'''How can you pick a random item from a range? '''
+value = random.randrange(1, 20)
+print(value)
+
+'''How can you get a random number in python? '''
+items1 = random.randint(1, 40)
+print(items1)
+
+'''How will you set the starting value in generating random numbers? '''
+
+'''We can use the seed() function which generates the same random numbers on multiple execution.'''
+
+'''How will you randomizes the items of a list in place? '''
+'''By using shuffle method to randomize the list of items in a place.'''
+
+'''Write a Python program to convert degree to radian '''
+
+import math
+
+
+def degreetoredian(degree):
+    return degree * math.pi / 180
+
+
+print(degreetoredian(90))
+
+'''Write a Python program to calculate the area of a trapezoid '''
+
+
+def calculate_trapezoid(base1, base2, height):
+    return 1 / 2 * (base1 + base2) * height
+
+
+print(calculate_trapezoid(12, 13, 3))
+
+'''Write a Python program to calculate the area of a parallelogram '''
+
+
+def parallelogram(b, h):
+    return b * h
+
+
+parallelogram(12, 13)
+
+'''Write a Python program to calculate surface volume and area of a
+cylinder'''
+
+
+def surface_area_cyclinder(r, h):
+    return 2 * math.pi * r * (r + h)
+
+
+print(surface_area_cyclinder(1, 4))
+
+
+def volume_of_cyclinder(r, h):
+    return math.pi * r ** 2 * h
+
+
+print(volume_of_cyclinder(12, 3))
+
+''' Write a Python program to returns sum of all divisors of a number '''
+
+
+def sum_divisor(n):
+    lists_divisor = []
+    for i in range(1, n):
+        if n % i == 0:
+            lists_divisor.append(i)
+    return sum(lists_divisor)
+
+
+print(sum_divisor(10))
+'''Write a Python program to find the maximum and minimum numbers
+from the specified decimal numbers'''
+
+
+def max_min(n):
+    max_n = max(n)
+    min_n = min(n)
+    return max_n, min_n
+
+
+list_num = [12.5, 11.2, 10.2, 9.5, 8.5, 7.5, 6.2, 5.5, 4.5, 2.2, 1.5, 2.3]
+print(max_min(list_num))
